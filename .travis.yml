@@ -11,6 +11,6 @@ install:
 script:
   # Run pep8 on all .py files in all subfolders
   # ignore E402: module level import not at top of file
-  - find . -name \*.py -exec pep8 --ignore=E402 {} +
-  - pylint
+  - pep8 diagnostic_feedback --max-line-length=120
+  - pylint diagnostic_feedback --disable=all --enable=function-redefined,undefined-variable,unused-variable
 
