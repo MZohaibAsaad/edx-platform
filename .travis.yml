@@ -2,7 +2,6 @@ language: python
 
 python:
   - "2.7"
-  - "3.4"
 
 install:
   - pip install pep8
@@ -11,6 +10,6 @@ install:
 script:
   # Run pep8 on all .py files in all subfolders
   # ignore E402: module level import not at top of file
-  - pep8 diagnostic_feedback --max-line-length=120
-  - pylint diagnostic_feedback --disable=all --enable=function-redefined,undefined-variable,unused-variable
-
+  - find . -name \*.py -exec pep8 --max-line-length=120
+  - pylint --disable=all --enable=function-redefined,undefined-variable,unused-variable
+  
