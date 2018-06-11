@@ -7,8 +7,9 @@ sudo: required
 
 before_install:
 - sudo rm -vf /etc/apt/sources.list.d/*riak*
-- sudo apt-get update
-- sudo xargs -a requirements/system/ubuntu/apt-packages.txt apt-get install -qq --fix-missing
+- sudo apt-get update -qq
+- sudo xargs -a requirements/system/ubuntu/apt-packages.txt
+- sudo apt-get install -qq --fix-missing
 
 
 install:
