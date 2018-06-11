@@ -5,7 +5,7 @@ python:
 
 install:
   - apt-get update -qq
-	- xargs -a requirements/system/ubuntu/apt-packages.txt apt-get install -qq --fix-missing
+  - xargs -a requirements/system/ubuntu/apt-packages.txt apt-get install -qq --fix-missing
   - pip install pep8
   - pip install pylint
   - pip install -r requirements/edx/pre.txt
