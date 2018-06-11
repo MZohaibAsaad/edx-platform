@@ -5,9 +5,13 @@ python:
 
 sudo: required
 
+before_install:
+- sudo rm -vf /etc/apt/sources.list.d/*riak*
+- sudo apt-get update
+- sudo xargs -a requirements/system/ubuntu/apt-packages.txt apt-get install -qq --fix-missing
+
+
 install:
-  - apt-get update
-  - xargs -a requirements/system/ubuntu/apt-packages.txt apt-get install -qq --fix-missing
   - pip install pep8
   - pip install pylint
   - pip install -r requirements/edx/pre.txt
