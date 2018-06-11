@@ -20,6 +20,8 @@ install:
   - pip install -r requirements/edx/local.txt
   - pip install -r requirements/edx/base.txt
   - pip install -r requirements/edx/paver.txt
+  - sudo apt-get update 
+  - sudo apt-get install libxmlsec1-dev
   - pip install -r requirements/edx/post.txt
   - pip install -r requirements/philu/base.txt
   - pip install -r requirements/edx/testing.txt
