@@ -10,7 +10,7 @@ before_install:
 - sudo apt-get update -qq
 - sudo xargs -a requirements/system/ubuntu/apt-packages.txt
 - sudo apt-get install -qq --fix-missing
-- BOTO_CONFIG = .
+- BOTO_CONFIG = /lms
 
 
 install:
