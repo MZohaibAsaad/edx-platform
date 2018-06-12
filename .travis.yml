@@ -29,6 +29,7 @@ install:
 script:
   # Run pep8 on all .py files in all subfolders
   # ignore E402: module level import not at top of file
+  - sudo service mongod start
   - find . -name \*.py -exec pep8 --max-line-length=120 {} +
   - pylint --disable=all --enable=function-redefined,undefined-variable,unused-variable
   - paver test_system -t lms/djangoapps/onboarding --fasttest
