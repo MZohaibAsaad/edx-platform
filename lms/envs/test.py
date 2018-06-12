@@ -372,8 +372,15 @@ MKTG_URL_LINK_MAP = {
 
 SUPPORT_SITE_LINK = 'https://support.example.com'
 
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_STORAGE_BUCKET_NAME = ''
+AWS_AUTO_CREATE_BUCKET = False
+AWS_LOCATION = ''   
+
 ############################ STATIC FILES #############################
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
 MEDIA_ROOT = TEST_ROOT / "uploads"
 MEDIA_URL = "/static/uploads/"
 STATICFILES_DIRS.append(("uploads", MEDIA_ROOT))
