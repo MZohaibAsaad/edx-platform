@@ -6,15 +6,14 @@ python:
 sudo: required
 
 services:
-- mysql
+  - mysql
 
 before_install:
-- sudo rm -vf /etc/apt/sources.list.d/*riak*
-- sudo apt-get update -qq
-- sudo xargs -a requirements/system/ubuntu/apt-packages.txt
-- sudo apt-get install -qq --fix-missing
-- BOTO_CONFIG=/lms/tmp
-
+  - sudo rm -vf /etc/apt/sources.list.d/*riak*
+  - sudo apt-get update -qq
+  - sudo xargs -a requirements/system/ubuntu/apt-packages.txt
+  - sudo apt-get install -qq --fix-missing
+  - BOTO_CONFIG=/lms/tmp
 
 install:
   - pip install pep8
@@ -30,6 +29,9 @@ install:
   - pip install -r requirements/philu/base.txt
   - pip install -r requirements/edx/testing.txt
   - pip install google-compute-engine
+
+before_script:
+  - mysql -e 'create database edxtest;' -u root
 
 script:
   # Run pep8 on all .py files in all subfolders
