@@ -3,6 +3,10 @@ language: python
 python:
   - "2.7"
 
+branches:
+  only:
+    - master
+
 sudo: required
 
 services:
@@ -23,7 +27,7 @@ install:
   - pip install -r requirements/edx/local.txt
   - pip install -r requirements/edx/base.txt
   - pip install -r requirements/edx/paver.txt
-  - sudo apt-get update 
+  - sudo apt-get update
   - sudo apt-get install libxmlsec1-dev
   - pip install -r requirements/edx/post.txt
   - pip install -r requirements/philu/base.txt
@@ -40,3 +44,5 @@ script:
   - find lms/djangoapps/onboarding -name \*.py -exec pep8 --max-line-length=120 {} +
   - pylint --disable=all --enable=function-redefined,undefined-variable,unused-variable
   - paver test_system -t lms/djangoapps/onboarding --fasttest
+
+
