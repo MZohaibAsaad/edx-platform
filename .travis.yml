@@ -5,6 +5,10 @@ python:
 
 sudo: required
 
+branches:
+  only:
+    - develop
+
 services:
   - mysql
 
@@ -13,22 +17,19 @@ before_install:
   - sudo apt-get update -qq
   - sudo xargs -a requirements/system/ubuntu/apt-packages.txt
   - sudo apt-get install -qq --fix-missing
-  - BOTO_CONFIG=/lms/tmp
 
 install:
-  - pip install pep8
-  - pip install pylint
   - pip install -r requirements/edx/pre.txt
   - pip install -r requirements/edx/github.txt
   - pip install -r requirements/edx/local.txt
   - pip install -r requirements/edx/base.txt
   - pip install -r requirements/edx/paver.txt
-  - sudo apt-get update
-  - sudo apt-get install libxmlsec1-dev
   - pip install -r requirements/edx/post.txt
   - pip install -r requirements/philu/base.txt
   - pip install -r requirements/edx/testing.txt
   - pip install google-compute-engine
+  - pip install pep8
+  - pip install pylint
 
 before_script:
   - mysql -e 'create database edxtest;' -u root
