@@ -5,10 +5,6 @@ python:
 
 sudo: required
 
-branches:
-  only:
-    - develop
-
 services:
   - mysql
 
