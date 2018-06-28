@@ -40,4 +40,10 @@ script:
   - pylint lms/djangoapps/onboarding --disable=all --enable=function-redefined,undefined-variable,unused-variable
   - paver test_system -t lms/djangoapps/onboarding --fasttest
 
+notifications:
+  email:
+    recipients:
+      - zohaib.asaad@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always
 
