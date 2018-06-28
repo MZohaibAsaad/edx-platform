@@ -5,6 +5,10 @@ python:
 
 sudo: required
 
+branches:
+  only:
+    - develop
+
 services:
   - mysql
 
@@ -12,7 +16,7 @@ before_install:
   - sudo rm -vf /etc/apt/sources.list.d/*riak*
   - sudo apt-get update -qq
   - sudo xargs -a requirements/system/ubuntu/apt-packages.txt
-  - sudo apt-get install -qq --fix-missing
+  - sudo apt-get install -qq --fix-missing]
 
 install:
   - pip install -r requirements/edx/pre.txt
@@ -44,6 +48,4 @@ notifications:
   email:
     recipients:
       - zohaib.asaad@gmail.com
-    on_success: always # default: change
-    on_failure: always # default: always
 
