@@ -483,7 +483,7 @@ class UserExtendedProfile(TimeStampedModel):
         :param selected_values: selected values list
         """
 
-        for interest_field, label in self.INTERESTS_LABELS.items():
+        for interest_field, _label in self.INTERESTS_LABELS.items():
             interest_field = interest_field.split("=")[1]
             if interest_field in selected_values:
                 _updated_value = 1
@@ -498,7 +498,7 @@ class UserExtendedProfile(TimeStampedModel):
         :param selected_values: selected values list
         """
 
-        for interested_learner_field, label in self.INTERESTED_LEARNERS_LABELS.items():
+        for interested_learner_field, _label in self.INTERESTED_LEARNERS_LABELS.items():
             interested_learner_field = interested_learner_field.split("=")[1]
             if interested_learner_field in selected_values:
                 _updated_value = 1
